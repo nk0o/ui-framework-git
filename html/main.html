@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Getting Started</title>
+  <script src="../resources/js/jquery-3.6.0.min.js"></script>
+   <script src="../resources/js/common.js"></script>
+   <link rel="stylesheet" href="../resources/css/prism.css">
+  <link rel="stylesheet" href="../resources/css/framework.css">
+</head>
+<body>
+  <div id="container">
+    <!-- contnets -->
+    <div class="contnets">
+      <!-- location -->
+      <div class="location">
+        <span>Grove UI Framework</span>
+        <span>Getting Started</span>
+        <i class="ico_frame_down ico_16"></i>
+      </div>
+      <!--// location -->
+      <!-- framework_sec -->
+      <div class="framework_sec">
+        <h3>Getting Started</h3>
+        <p class="framework_desc">
+          아름다운 웹 사이트를 손쉽게 구현하세요.<br/>
+          UI Framework는 프로젝트 진행 시 웹 화면의 전반적인 구성 요소들의 일관성을 유지하고 팀 내부의 유연한 업무를 돕는 컴포넌트 시스템입니다.
+        </p>
+        <div class="box_wrap download_box">
+          <strong>간단하게 시작하세요.</strong>
+          <p class="framework_desc">
+            기본 패키지를 다운로드 받아 프로젝트를 생성하세요.<br/>
+            필요한 소스 코드를 복사하여 디자인에 맞게 테마를 변경하여 사용하세요.
+          </p>
+          <div class="btn_area">
+            <button class="btn btn_md btn_green"><a href="../upload/ui-framework_ver_1.1.zip" download>Download Zip v1.1</a></button>
+            <button class="btn btn_md btn_white"><a href="https://guide.grovesoft.net" target="_blank">View Grove Web Guide</a></button>
+          </div>
+        </div>
+      </div>
+      <!--// framework_sec -->
+      <!-- framework_sec -->
+      <div class="framework_sec">
+         <h4>File list</h4>
+         <div class="box_wrap">
+            <p class="component_desc">
+               로컬 폴더에 "filelist.html" 파일을 소스 코드를 확인합니다.<br>작업 진행 상황에 따라 아래와 같이 작성하고, 진행률은 자동으로 계산됩니다.
+            </p>
+            <div class="component_guideline">
+               <div class="component_code">                  
+                  &lt;tr class="list"&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;MAIN&lt;/td&gt;<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;a href="<em>url</em>" target="_blank"&gt;<em>filename.html</em>&lt;/a&gt;&lt;/td&gt;  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 파일 이름 및 링크 */</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;<em>date(ex 2022.05.13)</em>&lt;/td&gt;  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 파일 생성 및 최종 수정일 */</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;span class="<em>r</em>"&gt;&lt;/span&gt;&lt;/td&gt;  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 페이지 구분:반응형 웹, 데스크탑 웹, 모바일 *</span>/<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;span class="<em>end</em>"&gt;&lt;/span&gt;&lt;/td&gt;  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 진행 상태:진행중, 수정, 완료 */</span><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;&lt;p&gt;empty&lt;/p&gt;&lt;/td&gt;  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 참고사항 */</span><br>
+                  &lt;/tr&gt;
+               </div>
+            </div>            
+         </div>
+      </div>
+      <!--// framework_sec -->
+      <!-- framework_sec -->
+      <div class="framework_sec">
+         <h4>Web font</h4>
+         <div class="box_wrap">
+            <p class="component_desc">
+               기본 폰트는 내장되어 있으며 국문은 노토산스, 영문은 팝핀스가 적용되어 있습니다.<br>프로젝트에 따라 다른 폰트로 손쉽게 변경할 수 있습니다.
+            </p>
+            <div class="component_guideline">
+               <div class="component_code">
+                  //Default font
+                  .font_kr{font-family: $font-noto;}<br>
+                  .font_en{font-family: $font-pop;}<br>
+                  /* 기본 폰트는 국문: 노토산스, 영문:팝핀스 폰트가 적용되어 있습니다.*/<br><br>
+                  //Embeded<br>
+                  $font-aritadt  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 아리따 돋움 */</span><br>
+                  $font-aritasans  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 아리따 산스 */</span><br>
+                  $font-lgsmha  &nbsp;&nbsp;&nbsp;<font_kr>/* LG 스마트체*/</font_kr><br>
+                  $font-APHQ  &nbsp;&nbsp;&nbsp;<span class="font_kr">/* 아모레HQ */</span>
+               </div>
+            </div>            
+         </div>
+      </div>
+      <!--// framework_sec -->
+      <!-- framework_sec -->
+      <div class="framework_sec">
+        <h3>Key Point</h3>
+        <p class="framework_desc">
+          컴포넌트는 웹 사이트를 구성하는 공통 요소입니다.<br/>
+          프로젝트마다 컴포넌트를 새로 제작하는 비효율적인 프로세스에서 벗어나 공통으로 사용되는 요소를 도출하여 각 컴포넌트에 적용하면 재사용이 가능합니다.<br/>
+          그 결과 작업 시간은 단축되고 더욱 체계적으로 프로젝트를 수행할 수 있습니다.
+        </p>
+        <div class="box_wrap">
+          <ul class="key_point">
+            <li>
+              <figure class="ico_framework_point01 ico_48"></figure>
+              <h5>Standards</h5>
+              <p class="inner_desc">
+                웹 가이드를 준수하여 소스 코드의<br/>
+                일관성을 유지합니다.
+              </p>
+            </li>
+            <li>
+              <figure class="ico_framework_point02 ico_48"></figure>
+              <h5>Performance</h5>
+              <p class="inner_desc">
+                손쉬운 사용과 소스 코드 최적화로<br/>
+                효율 높은 컴포넌트를 생성합니다.
+              </p>
+            </li>
+            <li>
+              <figure class="ico_framework_point03 ico_48"></figure>
+              <h5>High Quality</h5>
+              <p class="inner_desc">
+                디자인 심미성이 반영된 컴포넌트를<br/>
+                제공하여 초기 품질을 보장합니다.
+              </p>
+            </li>
+            <li>
+              <figure class="ico_framework_point04 ico_48"></figure>
+              <h5>Updating</h5>
+              <p class="inner_desc">
+                더 좋은 컴포넌트를 제공하기 위한<br/>
+                정기적인 업데이트를 진행합니다.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--// framework_sec -->
+      <!-- framework_sec -->
+      <div class="framework_sec">
+        <h3>Supported browsers</h3>
+        <p class="framework_desc">
+          우리는 웹 페이지의 상호 호환성(Cross Browsing)을 준수합니다.<br/>
+          표준 웹 기술을 도입하여 다른 기종이나 플랫폼에 따라 달리 구현되는 기술을 비슷하게 만들고 어느 한쪽에 치우치지 않도록 공통 요소를 사용하여 웹 페이지를 제작합니다.
+        </p>
+        <div class="box_wrap">
+          <ul class="browsers">
+            <li>
+              <figure><i class="ico_frame_edege ico_48"></i></figure>
+              <p>Edege</p>
+            </li>
+            <li>
+              <figure><i class="ico_frame_chrome ico_48"></i></figure>
+              <p>Chrome</p>
+            </li>
+            <li>
+              <figure><i class="ico_frame_safari ico_48"></i></figure>
+              <p>Safari</p>
+            </li>
+            <li>
+              <figure><i class="ico_frame_firefox ico_48"></i></figure>
+              <p>Firefox</p>
+            </li>
+            <li>
+              <figure><i class="ico_frame_opera ico_48"></i></figure>
+              <p>Opera</p>
+            </li>
+            <li>
+              <figure><i class="ico_frame_ie ico_48"></i></figure>
+              <p>Explorer</p>
+            </li>
+          </ul>
+          <p class="browsers_msg">We don't support Internet Explore 9, 10</p>
+        </div>
+      </div>
+      <!--// framework_sec -->
+    </div>
+    <!--// contnets -->
+    <footer>
+      Currently v1.1.0
+    </footer>
+  </div>
+  <script src="../resources/js/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="../resources/js/prism.js"></script>
+  <script>
+     snippetCopy(); //common.js
+  </script>
+</body>
+</html>
