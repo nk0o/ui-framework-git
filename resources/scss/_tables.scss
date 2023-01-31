@@ -250,8 +250,7 @@ div.dataTables {
             display: block;
             width: 24px;
             height: 24px;
-            @include iconImgPath("ico_forms.svg");
-            background-position: -24px -24px;
+            background-image: url("../images/icon/ico_check_checked.svg");
          }
          td.select-checkbox:before,
          td.select-checkbox:after,

@@ -105,8 +105,7 @@
 	transform: translateY(-50%);
 	width: 16px;
 	height: 16px;
-	background-image: url('../images/icon/ico_forms.svg'); 
-	background-position: -32px -64px;
+   @include iconImgPath("ico_select_down.svg");
 }
 
 @mixin blind {
@@ -122,5 +121,16 @@
 }
 
 @mixin iconImgPath($iconName) {
-   background-image: url('../images/icon/#{$iconName}');
+   // 지원안되는 브라우저 (색상변경은 안됨)
+   background-image: url("../images/icon/#{$iconName}");
+   background-size: cover;
+   // 지원되는 브라우저
+   @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+     background-color: #1f1f1f;
+     -webkit-mask-image: url("../images/icon/#{$iconName}");
+     mask-image: url("../images/icon/#{$iconName}");
+     -webkit-mask-size: cover;
+     mask-size: cover;
+     background-image: none;
+   }
 }

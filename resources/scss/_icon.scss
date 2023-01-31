@@ -17,13 +17,20 @@
       background-repeat: no-repeat;
    }
 }
-/* filter로 색상 변경 */
+/* svg아이콘 backgroundColor로 색상 변경(!important로 덮기) */
 *[class*="ico_"]{
-   &:not(.ico_el_zoom):not(.ico_el_write):not(.ico_frm_clip).white{
-      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(230deg) brightness(104%) contrast(103%);
+   &.white{
+      &::before{
+         background-color: $color-white !important;
+      }
+   }
+   &.primary, &.blue{
+      &::before{
+         background-color: $color-primary !important;
+      }
    }
 }
-/* 사이즈별 */
+/* 아이콘 사이즈 클래스 */
 *[class*="ico_48"] {
    width: 48px;
    height: 48px;
@@ -41,264 +48,9 @@
    height: 16px;
 }
 
-/********* 유형별 *********/
-/* ui-framework 아이콘 */
-*[class*="ico_frame"] {
-   &::before {
-      @include iconImgPath("ico_framework.svg");
-      background-size: auto;
-   }
-}
-.ico_frame {
-   &_logo {
-      &::before {
-         background-position: 2px 2px;
-      }
-   }
-   &_standard {
-      &::before {
-         background-position: 0px -44px;
-      }
-   }
-   &_perform {
-      &::before {
-         background-position: -48px -44px;
-      }
-   }
-   &_high {
-      &::before {
-         background-position: -96px -44px;
-      }
-   }
-   &_update {
-      &::before {
-         background-position: -144px -44px;
-      }
-   }
-   //브라우저
-   &_edege {
-      &::before {
-         background-position: -192px -44px;
-      }
-   }
-   &_chrome {
-      &::before {
-         background-position: -240px -44px;
-      }
-   }
-   &_safari {
-      &::before {
-         background-position: -288px -44px;
-      }
-   }
-   &_firefox {
-      &::before {
-         background-position: -336px -44px;
-      }
-   }
-   &_opera {
-      &::before {
-         background-position: -384px -44px;
-      }
-   }
-   &_ie {
-      &::before {
-         background-position: -432px -44px;
-      }
-   }
-   //24px
-   &_copy {
-      &::before {
-         background-position: 0px -92px;
-      }
-   }
-   //16px
-   &_down {
-      &::before {
-         background-position: 0px -116px;
-      }
-   }
-   &_down {
-      &::before {
-         background-position: 0px -116px;
-      }
-   }
-   &_code {
-      &::before {
-         background-position: -16px -115px;
-      }
-   }
-}
-
-/* Element 아이콘 */
-*[class*="ico_el"] {
-   &::before {
-      @include iconImgPath("ico_elements.svg");
-      background-size: auto;
-   }
-}
-.ico_el {
-   //검색 돋보기 아이콘
-   &_zoom {
-      &::before {
-         background-position: 0 0;
-      }
-      &.white {
-         &::before {
-            background-position: 0 0;
-         }
-      }
-      &.gray {
-         &::before {
-            background-position: -24px 0;
-         }
-      }
-      &.blue {
-         &::before {
-            background-position: -48px 0;
-         }
-      }
-   }
-   //작성 아이콘
-   &_write {
-      &::before {
-         background-position: 0 0;
-      }
-      &.white {
-         &::before {
-            background-position: 0 -48px;
-         }
-      }
-      &.gray {
-         &::before {
-            background-position: -16px -48px;
-         }
-      }
-      &.blue {
-         &::before {
-            background-position: -32px -48px;
-         }
-      }
-   }
-}
-
-/* Form 아이콘 */
-*[class*="ico_frm"] {
-   &::before {
-      @include iconImgPath("ico_forms.svg");
-      background-size: auto;
-   }
-}
-.ico_frm {
-   //검색 돋보기 아이콘
-   &_zoom {
-      &::before {
-         background-position: -3px 0;
-      }
-      &.white {
-         &::before {
-            background-position: -3px 0;
-         }
-      }
-      &.gray {
-         &::before {
-            background-position: -27px 0;
-         }
-      }
-      &.blue {
-         &::before {
-            background-position: -51px 0;
-         }
-      }
-   }
-   //체크박스 아이콘
-   &_ch {
-      &::before {
-         background-position: 0 -24px;
-      }
-      &-check {
-         &::before {
-            background-position: -24px -24px;
-         }
-      }
-      &-dis {
-         &::before {
-            background-position: -48px -24px;
-         }
-      }
-      &-dis-check {
-         &::before {
-            background-position: -72px -24px;
-         }
-      }
-   }
-   //라디오박스 아이콘
-   &_rd {
-      &::before {
-         background-position: -96px -24px;
-      }
-      &-check {
-         &::before {
-            background-position: -120px -24px;
-         }
-      }
-      &-dis {
-         &::before {
-            background-position: -144px -24px;
-         }
-      }
-      &-dis-check {
-         &::before {
-            background-position: -168px -24px;
-         }
-      }
-   }
-   //클립 아이콘
-   &_clip {
-      &::before {
-         background-position: 0 0;
-      }
-      &.white {
-         &::before {
-            background-position: 0 -48px;
-         }
-      }
-      &.gray {
-         &::before {
-            background-position: -16px -48px;
-         }
-      }
-      &.blue {
-         &::before {
-            background-position: -32px -48px;
-         }
-      }
-   }
-   //성공 / 에러 아이콘
-   &_success {
-      &::before {
-         background-position: 0px -64px;
-      }
-   }
-   &_error {
-      &::before {
-         background-position: -16px -64px;
-      }
-   }
-   //방향 아이콘
-   &_down {
-      &::before {
-         background-position: -32px -64px;
-      }
-   }
-   &_up {
-      &::before {
-         background-position: -48px -64px;
-      }
-   }
-}
+/********* 아이콘 svg 추가 *********/
+/* user아이콘 */
 .ico {
-   //user아이콘
    &_user {
       &::before {
          @include iconImgPath("ico_user.svg");
@@ -324,7 +76,9 @@
          }
       }
    }
-   //arrow 아이콘
+}
+/* arrow 아이콘 */
+.ico {
    &_arr {
       &_left {
          &::before {
@@ -457,7 +211,9 @@
          }
       }
    }
-   //Commerce
+}
+/* Commerce */
+.ico {
    &_cart {
       &::before {
          @include iconImgPath("ico_cart.svg");
@@ -513,7 +269,9 @@
          @include iconImgPath("ico_wallet.svg");
       }
    }
-   //Device
+}
+/* Device */
+.ico {
    &_monitor {
       &::before {
          @include iconImgPath("ico_monitor.svg");
@@ -554,7 +312,9 @@
          @include iconImgPath("ico_watch.svg");
       }
    }
-   //Multimedia
+}
+/* Multimedia */
+.ico {
    &_mike {
       &::before {
          @include iconImgPath("ico_mike.svg");
@@ -667,7 +427,9 @@
          }
       }
    }
-   //UI actions
+}
+/* UI actions */
+.ico {
    &_home {
       &::before {
          @include iconImgPath("ico_home.svg");
@@ -877,6 +639,16 @@
    &_over_menu {
       &::before {
          @include iconImgPath("ico_over_menu.svg");
+      }
+   }
+   &_write {
+      &::before {         
+         @include iconImgPath("ico_write.svg");
+      }
+   }
+   &_zoom {
+      &::before {         
+         @include iconImgPath("ico_zoom.svg");
       }
    }
 }

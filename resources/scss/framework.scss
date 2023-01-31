@@ -16,7 +16,7 @@
 	height: 48px;
 }
 *[class*='ico_framework'] {
-	background-image: url($framework-imgpath);
+	background-image: url("../images/icon/ico_framework.svg");
 	background-repeat: no-repeat;
 }
 .ico_framework {
@@ -901,9 +901,6 @@ footer {
 		border-radius: 4px;
 		background-color: transparent;
 		cursor: pointer;
-		i {
-			vertical-align: top;
-		}
 		&:hover {
 			background-color: $color-box;
 		}
@@ -975,4 +972,92 @@ footer {
 			background-color: $color-white;
 		}
 	}
+}
+//framework 아이콘
+/* ui-framework 아이콘 */
+*[class*="ico_frame"] {
+   &::before {
+      background-image: url("../images/ui_framework_sprite.svg");
+      background-size: auto;
+   }
+}
+.ico_frame {
+   &_logo {
+      &::before {
+         background-position: 2px 2px;
+      }
+   }
+   &_standard {
+      &::before {
+         background-position: 0px -44px;
+      }
+   }
+   &_perform {
+      &::before {
+         background-position: -48px -44px;
+      }
+   }
+   &_high {
+      &::before {
+         background-position: -96px -44px;
+      }
+   }
+   &_update {
+      &::before {
+         background-position: -144px -44px;
+      }
+   }
+   //브라우저
+   &_edege {
+      &::before {
+         background-position: -192px -44px;
+      }
+   }
+   &_chrome {
+      &::before {
+         background-position: -240px -44px;
+      }
+   }
+   &_safari {
+      &::before {
+         background-position: -288px -44px;
+      }
+   }
+   &_firefox {
+      &::before {
+         background-position: -336px -44px;
+      }
+   }
+   &_opera {
+      &::before {
+         background-position: -384px -44px;
+      }
+   }
+   &_ie {
+      &::before {
+         background-position: -432px -44px;
+      }
+   }
+   //24px
+   &_copy {
+      &::before {
+         background-position: 0px -92px;
+      }
+   }
+   //16px
+   &_down {
+      &::before {
+         background-position: 0px -116px;
+      }
+   }
+   &_down {
+      &::before {
+         background-position: 0px -116px;
+      }
+   }
+   &_code {
+      &::before {
+         @include iconImgPath("ico_code.svg");
+      }
+   }
 }

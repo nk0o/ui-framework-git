@@ -191,8 +191,7 @@
          transform: translateY(-50%) rotate(0);
          width: 16px;
          height: 16px;
-         @include iconImgPath("ico_forms.svg");
-         background-position: -32px -64px;
+         @include iconImgPath("ico_select_down.svg");
       }
    }
 }

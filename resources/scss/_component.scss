@@ -310,18 +310,19 @@ caption {
       transform: translateY(-50%);
       width: 16px;
       height: 16px;
-      @include iconImgPath("ico_forms.svg");
    }
    &.error {
       color: $color-red;
       &::before {
-         background-position: -16px -64px;
+         @include iconImgPath("ico_error.svg");
+         background-color:$color-red !important;
       }
    }
    &.success {
       color: $color-green;
       &::before {
-         background-position: 0px -64px;
+         @include iconImgPath("ico_success.svg");
+         background-color:$color-green !important;
       }
    }
 }

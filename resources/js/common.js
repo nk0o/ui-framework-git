@@ -141,7 +141,7 @@ $(document).ready(function () {
     };
 
     function selectBoxDownAction(el) {
-        $(el).parents('.select_box_list').find('li').not('.disabled').children('a').not('.text-primary').removeClass('selected');
+        $(el).parents('.select_box_list').find('li').removeClass('selected');
 
         if (!$(el).parent('li').hasClass('disabled')) {
             $(el).addClass('selected');
