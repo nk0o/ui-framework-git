@@ -3557,7 +3557,7 @@ button {
   white-space: nowrap;
   min-width: 256px;
   min-height: 38px;
-  padding: 9px 4px 9px 16px;
+  padding: 9px 44px 9px 16px;
   font-size: 1.4rem;
   font-weight: 500;
   color: #5E5E5E;
@@ -4083,7 +4083,7 @@ select {
   position: relative;
   width: 360px;
   height: 160px;
-  padding: 12px 12px 4px 12px;
+  padding: 12px 12px 44px 12px;
   border: solid 1px #DBDBDB;
   border-radius: 3px;
   background-color: #fff;
@@ -4856,7 +4856,7 @@ div.dataTables_wrapper .btn:focus {
 /* Accordion */
 .accord_tit {
   position: relative;
-  padding: 16px 16px 16px 4px;
+  padding: 16px 16px 16px 44px;
   font-size: 1.4rem;
 }
 .accord_tit::before {
@@ -4921,7 +4921,7 @@ div.dataTables_wrapper .btn:focus {
 }
 .accord_list.arr_right_list .accord_tit {
   padding-left: 16px;
-  padding-right: 4px;
+  padding-right: 44px;
 }
 .accord_list.arr_right_list .accord_tit::before {
   left: auto;
@@ -4949,7 +4949,7 @@ div.dataTables_wrapper .btn:focus {
   background-color: #0f62fe !important;
 }
 .accord_list.faq_list .accord_cont {
-  padding-left: 4px;
+  padding-left: 44px;
 }
 .accord_list.faq_list .accord_cont::before {
   content: "";
@@ -5392,7 +5392,7 @@ div.dataTables_wrapper .btn:focus {
   padding: 60px 36px;
 }
 #container .contnets .location {
-  margin-bottom: 4px;
+  margin-bottom: 44px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5679,7 +5679,7 @@ footer {
   margin-top: 24px;
 }
 .box_wrap .component_guideline .guide_list.typo_list > li + li, .box_wrap .component_guideline .guide_list.flex_list > li + li {
-  margin-top: 4px;
+  margin-top: 44px;
 }
 .box_wrap .component_guideline .guide_list.icon_list > li + li {
   margin-top: 80px;
@@ -5696,12 +5696,12 @@ footer {
       align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: -4px;
+  margin-top: -44px;
 }
 .box_wrap .component_guideline .guide_list.icon_list .icon_list_items li {
   -ms-flex-preferred-size: 160px;
       flex-basis: 160px;
-  margin-top: 4px;
+  margin-top: 44px;
   text-align: center;
 }
 .box_wrap .component_guideline .guide_list.icon_list .icon_list_items li i + p {
@@ -6005,8 +6005,8 @@ footer {
   height: 32px;
 }
 .box_wrap .component_guideline .spacing_scale_tbl tbody tr:nth-child(8) .example_spacing {
-  width: 4px;
-  height: 4px;
+  width: 44px;
+  height: 44px;
 }
 .box_wrap .component_guideline .spacing_scale_tbl tbody tr:nth-child(9) .example_spacing {
   width: 48px;
@@ -6017,8 +6017,8 @@ footer {
   height: 64px;
 }
 .box_wrap .component_guideline .spacing_scale_tbl tbody tr:nth-child(11) .example_spacing {
-  width: 8px;
-  height: 8px;
+  width: 80px;
+  height: 80px;
 }
 .box_wrap .component_guideline .spacing_scale_tbl tbody tr:nth-child(12) .example_spacing {
   width: 96px;
@@ -6031,7 +6031,7 @@ footer {
 }
 
 .download_box {
-  padding: 22px 4px 24px 4px;
+  padding: 22px 44px 24px 44px;
   background-color: #F0FBF5;
   border-left: 3px solid #00B050;
 }
