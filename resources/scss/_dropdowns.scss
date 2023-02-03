@@ -143,14 +143,13 @@
             width: 100%;
             height: 100%;
             @include iconImgPath("ico_over_menu.svg");
-            background-position: center;
          }
       }
       &.on {
          .select_box_value {
-            &::after {
-               filter: invert(27%) sepia(97%) saturate(3854%) hue-rotate(217deg) brightness(101%) contrast(99%);
-            }
+           &::after{
+            background-color: $color-primary !important;
+           }
          }
       }
    }

@@ -1,5 +1,5 @@
 /* Accordion */
-.accordion {
+.accord {
    &_tit {
       position: relative;
       padding: $sp05 $sp05 $sp05 $sp08;
@@ -18,7 +18,7 @@
          @include trans($prop: all, $duration: 0.3s, $type: ease-out, $delay: 0s);
       }
    }
-   &_heading {
+   &_head {
       position: relative;
       font-size: $fs-sm;
       line-height: 26px;
@@ -29,12 +29,12 @@
       }
       &.on {
          font-weight: $fw-m;
-         color: $color-primary;
-         .accordion_tit {
+         color: $color-primary; 
+         .accord_tit {
             &::before {
                -webkit-transform: rotate(-180deg) translateY(50%);
                transform: rotate(-180deg) translateY(50%);
-               filter: invert(27%) sepia(97%) saturate(3854%) hue-rotate(217deg) brightness(101%) contrast(99%);
+               background-color: $color-primary !important;
             }
          }
       }
@@ -42,16 +42,18 @@
    &_cont {
       display: none;
       position: relative;
-      padding: $sp05;
-      font-size: $fs-s;
-      font-weight: $fw-n;
-      color: $gray-700;
       line-height: 24px;
       background-color: $color-box;
+      p{
+         padding: $sp05;
+         font-size: $fs-s;
+         font-weight: $fw-n;
+         color: $gray-700;
+      }
    }
    &_list {
       &.arr_right_list {
-         .accordion_tit {
+         .accord_tit {
             padding-left: $sp05;
             padding-right: $sp08;
             &::before {
@@ -61,23 +63,22 @@
          }
       }
       &.faq_list {
-         .accordion_tit {
+         .accord_tit {
             &::before {
                @include iconImgPath("ico_faq_Q_16.svg");
             }
          }
-         .accordion_heading {
+         .accord_head {
             &.on {
-               .accordion_tit {
-                  filter: brightness(0) saturate(100%) invert(29%) sepia(42%) saturate(5897%) hue-rotate(215deg)
-                     brightness(98%) contrast(105%);
+               .accord_tit {
                   &::before {
                      transform: translateY(-50%);
+                     background-color: $color-primary !important;
                   }
                }
             }
          }
-         .accordion_cont {
+         .accord_cont {
             padding-left: $sp08;
             &::before {
                content: "";

@@ -132,5 +132,7 @@
      -webkit-mask-size: cover;
      mask-size: cover;
      background-image: none;
+     -webkit-mask-repeat: no-repeat;
+     mask-repeat: no-repeat;
    }
 }

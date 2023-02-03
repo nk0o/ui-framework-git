@@ -194,7 +194,9 @@
          color: $color-primary;
       }
       i{
-         filter: invert(23%) sepia(80%) saturate(3121%) hue-rotate(217deg) brightness(101%) contrast(99%);
+         &::before{
+            background-color: $color-primary !important;
+         }
       }
    }
    & +.framework_sec{
