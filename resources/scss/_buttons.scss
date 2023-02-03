@@ -185,33 +185,3 @@ button {
       }
    }
 }
-
-label.btn {
-   flex-basis: auto;
-   width: auto;
-   line-height: 38px;
-   &_xl {
-      line-height: 56px;
-   }
-   &_lg {
-      line-height: 50px;
-   }
-   &_md {
-      line-height: 44px;
-   }
-   &_sm {
-      line-height: 38px;
-   }
-   &_xs {
-      line-height: 32px;
-   }
-}
-
-//a태그에 btn적용하는 경우
-a{
-   &.btn{
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-   }
-}

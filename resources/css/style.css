@@ -3425,40 +3425,6 @@ button {
   margin-left: 8px;
 }
 
-label.btn {
-  -ms-flex-preferred-size: auto;
-      flex-basis: auto;
-  width: auto;
-  line-height: 38px;
-}
-label.btn_xl {
-  line-height: 56px;
-}
-label.btn_lg {
-  line-height: 50px;
-}
-label.btn_md {
-  line-height: 44px;
-}
-label.btn_sm {
-  line-height: 38px;
-}
-label.btn_xs {
-  line-height: 32px;
-}
-
-a.btn {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 /* Toggle Button*/
 .btn_toggle {
   display: inline-block;
@@ -4774,6 +4740,9 @@ div.dataTables_wrapper div.dataTables_paginate .pagination > .active > span:hove
   border-color: #0f62fe;
   background-color: #0f62fe;
 }
+div.dataTables_wrapper div.dataTables_paginate .paginate_button > a {
+  margin: 2px;
+}
 div.dataTables_wrapper table.dataTable {
   margin-top: 8px !important;
   margin-bottom: 8px !important;
@@ -5068,7 +5037,7 @@ div.dataTables_wrapper .btn:focus {
 }
 .pagination a.arr {
   width: auto;
-  padding: 0 8px;
+  padding: 4px;
   background-size: 24px;
   background-position: center;
   background-repeat: no-repeat;

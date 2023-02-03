@@ -214,6 +214,11 @@ div.dataTables {
             border-color: $color-primary;
             background-color: $color-primary;
          }
+         .paginate_button{
+            & > a{
+               margin: $sp01;
+            }
+         }
       }
       //테이블
       table.dataTable {
