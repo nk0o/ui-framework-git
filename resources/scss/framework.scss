@@ -2,15 +2,38 @@
 
 @import 'style';
 
-.framework {
-	overflow-y: hidden;
+//framework에서 사용되는 breakpoint
+$breakpoint-mobile: calc(360px + 48px);
+$breakpoint-tablet: calc(769px + 48px);
+$breakpoint-desktop: calc(1280px + 72px);
+
+
+//framework에서 사용되는 mixin
+@mixin framework-desc {
+   font-size: $fs-s;
+   line-height: 2.6rem;
+   color: $gray-500;
+   letter-spacing: -0.56px;
+ }
+@mixin frameworkIconName($icon_name) {
+   &::before {
+      // 지원안되는 브라우저 (색상변경은 안됨)
+      background-image: url("../images/#{$icon_name}.svg");
+      background-size: cover;
+      // 지원되는 브라우저
+      @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+      background-color: #1f1f1f;
+      -webkit-mask-image: url("../images/#{$icon_name}.svg");
+      mask-image: url("../images/#{$icon_name}.svg");
+      -webkit-mask-size: cover;
+      mask-size: cover;
+      background-image: none;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      }
+   }
 }
-.iframe {
-	width: calc(100% - 266px);
-	height: 100vh;
-	margin-left: 266px;
-	background-color: #fefefe;
-}
+//framework에서 사용되는 icon
 *[class*='ico_48'] {
 	width: 48px;
 	height: 48px;
@@ -19,6 +42,33 @@
 	background-image: url("../images/icon/ico_framework.svg");
 	background-repeat: no-repeat;
 }
+*[class*="ico_frame"] {
+   &::before {
+      background-image: url("../images/ui_framework_sprite.svg");
+      background-size: auto;
+   }
+}
+.ico_color{@include frameworkIconName("ico_color");}
+.ico_typo{@include frameworkIconName("ico_typo");}
+.ico_badge{@include frameworkIconName("ico_badge");}
+.ico_layout{@include frameworkIconName("ico_layout");}
+.ico_spacing{@include frameworkIconName("ico_spacing");}
+.ico_icon{@include frameworkIconName("ico_icon");}
+.ico_datatable{@include frameworkIconName("ico_datatable");}
+.ico_dropdown{@include frameworkIconName("ico_dropdown");}
+.ico_flex{@include frameworkIconName("ico_flex");}
+.ico_layouttemplate{@include frameworkIconName("ico_layouttemplate");}
+.ico_pagination{@include frameworkIconName("ico_pagination");}
+.ico_progress{@include frameworkIconName("ico_progress");}
+.ico_table{@include frameworkIconName("ico_table");}
+.ico_tabs{@include frameworkIconName("ico_tabs");}
+.ico_accordion{@include frameworkIconName("ico_accordion");}
+.ico_textfields{@include frameworkIconName("ico_textfields");}
+.ico_toggle{@include frameworkIconName("ico_toggle");}
+.ico_checkbox{@include frameworkIconName("ico_checkbox");}
+.ico_button{@include frameworkIconName("ico_button");}
+.ico_uploader{@include frameworkIconName("ico_uploader");}
+.ico_datatable{@include frameworkIconName("ico_datatable");}
 .ico_framework {
 	&_logo {
 		background-position: 0 0;
@@ -36,13 +86,107 @@
 		background-position: -144px -44px;
 	}
 }
+.ico_frame {
+   &_logo {
+      &::before {
+         background-position: 2px 2px;
+      }
+   }
+   &_standard {
+      &::before {
+         background-position: 0px -44px;
+      }
+   }
+   &_perform {
+      &::before {
+         background-position: -48px -44px;
+      }
+   }
+   &_high {
+      &::before {
+         background-position: -96px -44px;
+      }
+   }
+   &_update {
+      &::before {
+         background-position: -144px -44px;
+      }
+   }
+   //브라우저
+   &_edege {
+      &::before {
+         background-position: -192px -44px;
+      }
+   }
+   &_chrome {
+      &::before {
+         background-position: -240px -44px;
+      }
+   }
+   &_safari {
+      &::before {
+         background-position: -288px -44px;
+      }
+   }
+   &_firefox {
+      &::before {
+         background-position: -336px -44px;
+      }
+   }
+   &_opera {
+      &::before {
+         background-position: -384px -44px;
+      }
+   }
+   &_ie {
+      &::before {
+         background-position: -432px -44px;
+      }
+   }
+   //24px
+   &_copy {
+      &::before {
+         background-position: 0px -92px;
+      }
+   }
+   //16px
+   &_down {
+      &::before {
+         background-position: 0px -116px;
+      }
+   }
+   &_down {
+      &::before {
+         background-position: 0px -116px;
+      }
+   }
+   &_code {
+      &::before {
+         @include iconImgPath("ico_code.svg");
+      }
+   }
+}
+
+.framework {
+	overflow-y: hidden;
+}
+.iframe {
+	width: calc(100% - 266px);
+	height: 100vh;
+	margin-left: 266px;
+	background-color: #fefefe;
+   transition: margin 300ms;
+}
+
 .framework_menu {
 	overflow-y: auto;
 	position: fixed;
 	width: 266px;
 	height: 100vh;
+	height: calc(100vh - 48px);
 	padding: $sp06;
 	background-color: #444B59;
+   transition: width 300ms;
 	&::-webkit-scrollbar-track {
 		border-radius: 5px;
 		background-color: #ddd;
@@ -72,6 +216,9 @@
 		}
 	}
 	.framework_list {
+      *[class*='ico_']{
+         display: none;
+      }
 		* {
 			@include en;
 		}
@@ -115,12 +262,93 @@
 			}
 		}
 	}
+   .menubar_toggle{
+      display: block;
+      z-index: 1;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: calc(266px - 7px);
+      height: 48px;
+      background-color: #444B59;
+      border-top: 1px solid #575D6A;
+      .btn{
+         padding: 8px 24px;
+         color: #fff;
+         i{
+            &::before{
+               background-color: #fff !important;
+            }
+         }
+      }
+   }
+   
+   &.collapsed{
+      width: auto;
+      padding: 16px;
+      h1{
+         display: inline-block;
+         height: 29px;
+         padding-bottom: 54px;
+         margin-bottom: 0;
+         padding-left: 30px;
+         font-size: 0;
+         background-size: 320px;
+         border-bottom: 1px solid #888;
+      }
+      .framework_list{
+         *[class*='ico_']{
+            display: inline-block;
+            &::before{
+               background-color: #fff !important;
+            }
+         }
+         .depth1{
+            display: none;
+         }
+         .depth2 {
+            padding-bottom: 24px;
+            border-color: #888;
+            text-align: center;
+            .depth2_list {
+               li {
+                  margin-top: 24px;
+                  a{
+                     font-size: 0;
+                  }
+               }
+            }
+         }
+      }
+      .menubar_toggle{
+         border-color: #888;
+         width: auto;
+         .btn{
+            font-size: 0;
+            padding: 8px 18px 8px 24px;
+         }
+         .ico_arr_left{
+            &::before{
+               -webkit-mask-image: url("../images/icon/ico_arr_right.svg");
+            }
+         }
+      }
+      & + .iframe{
+         width: calc(100% - 70px);
+         margin-left: 70px;
+      }
+   }
+
+
 }
 /* common */
 #container {
 	width: calc(1280px + 72px);
 	margin: 0 auto;
-	padding: 60px 36px;
+	padding: 60px 36px;   
 	.contnets {
 		.location {
 			margin-bottom: $sp08;
@@ -975,91 +1203,10 @@ footer {
 		}
 	}
 }
-//framework 아이콘
-/* ui-framework 아이콘 */
-*[class*="ico_frame"] {
-   &::before {
-      background-image: url("../images/ui_framework_sprite.svg");
-      background-size: auto;
-   }
-}
-.ico_frame {
-   &_logo {
-      &::before {
-         background-position: 2px 2px;
-      }
-   }
-   &_standard {
-      &::before {
-         background-position: 0px -44px;
-      }
-   }
-   &_perform {
-      &::before {
-         background-position: -48px -44px;
-      }
-   }
-   &_high {
-      &::before {
-         background-position: -96px -44px;
-      }
-   }
-   &_update {
-      &::before {
-         background-position: -144px -44px;
-      }
-   }
-   //브라우저
-   &_edege {
-      &::before {
-         background-position: -192px -44px;
-      }
-   }
-   &_chrome {
-      &::before {
-         background-position: -240px -44px;
-      }
-   }
-   &_safari {
-      &::before {
-         background-position: -288px -44px;
-      }
-   }
-   &_firefox {
-      &::before {
-         background-position: -336px -44px;
-      }
-   }
-   &_opera {
-      &::before {
-         background-position: -384px -44px;
-      }
-   }
-   &_ie {
-      &::before {
-         background-position: -432px -44px;
-      }
-   }
-   //24px
-   &_copy {
-      &::before {
-         background-position: 0px -92px;
-      }
-   }
-   //16px
-   &_down {
-      &::before {
-         background-position: 0px -116px;
-      }
-   }
-   &_down {
-      &::before {
-         background-position: 0px -116px;
-      }
-   }
-   &_code {
-      &::before {
-         @include iconImgPath("ico_code.svg");
-      }
+
+@include tablet {
+   #container{
+      width: 100%;
+      padding: 60px 24px;
    }
 }

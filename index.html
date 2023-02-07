@@ -11,7 +11,10 @@
 </head>
 <body class="framework">
   <div id="wrap">
-    <nav class="framework_menu">
+    <nav class="framework_menu collapsed">
+      <div class="menubar_toggle">
+         <button class="btn"><i class="ico_16 ico_arr_left"></i> Collapsed View</button>
+      </div>
       <h1 class="ico_framework_logo">UI Framework</h1>
       <dl class="framework_list">
         <dt class="depth1">
@@ -21,16 +24,16 @@
         <dd class="depth2">
           <ul class="depth2_list">
             <li>
-              <a href="./html/colors.html" target="iframe">Colors</a>
+              <a href="./html/colors.html" target="iframe"><i class="ico_24 ico_color"></i>Colors</a>
             </li>
             <li>
-              <a href="./html/typography.html" target="iframe">Typography</a>
+              <a href="./html/typography.html" target="iframe"><i class="ico_24 ico_typo"></i>Typography</a>
             </li>
             <li>
-              <a href="./html/layouts.html" target="iframe">Layouts</a>
+              <a href="./html/layouts.html" target="iframe"><i class="ico_24 ico_layout"></i>Layouts</a>
             </li>
             <li>
-              <a href="./html/spacing.html" target="iframe">Spacing</a>
+              <a href="./html/spacing.html" target="iframe"><i class="ico_24 ico_spacing"></i>Spacing</a>
             </li>
           </ul>
         </dd>
@@ -38,25 +41,25 @@
         <dd class="depth2">
           <ul class="depth2_list">
             <li>
-              <a href="./html/icons.html" target="iframe">Icons</a>
+              <a href="./html/icons.html" target="iframe"><i class="ico_24 ico_icon"></i>Icons</a>
             </li>
             <li>
-              <a href="./html/buttons.html" target="iframe">Buttons</a>
+              <a href="./html/buttons.html" target="iframe"><i class="ico_24 ico_button"></i>Buttons</a>
             </li>
             <li>
-              <a href="./html/tabs.html" target="iframe">Tabs</a>
+              <a href="./html/tabs.html" target="iframe"><i class="ico_24 ico_tabs"></i>Tabs</a>
             </li>
             <li>
-              <a href="./html/accordions.html" target="iframe">Accordions</a>
+              <a href="./html/accordions.html" target="iframe"><i class="ico_24 ico_accordion"></i>Accordions</a>
             </li>
             <li>
-              <a href="./html/badges.html" target="iframe">Badges</a>
+              <a href="./html/badges.html" target="iframe"><i class="ico_24 ico_badge"></i>Badges</a>
             </li>
             <li>
-              <a href="./html/progressbar.html" target="iframe">Progressbar</a>
+              <a href="./html/progressbar.html" target="iframe"><i class="ico_24 ico_progress"></i>Progressbar</a>
             </li>
             <li>
-              <a href="./html/pagination.html" target="iframe">Pagination</a>
+              <a href="./html/pagination.html" target="iframe"><i class="ico_24 ico_pagination"></i>Pagination</a>
             </li>
           </ul>
         </dd>
@@ -64,19 +67,19 @@
         <dd class="depth2">
           <ul class="depth2_list">
             <li>
-              <a href="./html/textFields.html" target="iframe">Text Fields</a>
+              <a href="./html/textFields.html" target="iframe"><i class="ico_24 ico_textfields"></i>Text Fields</a>
             </li>
             <li>
-              <a href="./html/checks_radios.html" target="iframe">Checks and Radios</a>
+              <a href="./html/checks_radios.html" target="iframe"><i class="ico_24 ico_checkbox"></i>Checks and Radios</a>
             </li>
             <li>
-              <a href="./html/dropdowns.html" target="iframe">Dropdowns</a>
+              <a href="./html/dropdowns.html" target="iframe"><i class="ico_24 ico_dropdown"></i>Dropdowns</a>
             </li>
             <li>
-              <a href="./html/fileUploader.html" target="iframe">File Uploader</a>
+              <a href="./html/fileUploader.html" target="iframe"><i class="ico_24 ico_uploader"></i>File Uploader</a>
             </li>
             <li>
-              <a href="./html/toggles.html" target="iframe">Toggles</a>
+              <a href="./html/toggles.html" target="iframe"><i class="ico_24 ico_toggle"></i>Toggles</a>
             </li>
           </ul>
         </dd>
@@ -84,10 +87,10 @@
         <dd class="depth2">
           <ul class="depth2_list">
             <li>
-              <a href="./html/basicTables.html" target="iframe">Basic Tables</a>
+              <a href="./html/basicTables.html" target="iframe"><i class="ico_24 ico_table"></i>Basic Tables</a>
             </li>
             <li>
-              <a href="./html/dataTables.html" target="iframe">Data Tables</a>
+              <a href="./html/dataTables.html" target="iframe"><i class="ico_24 ico_datatable"></i>Data Tables</a>
             </li>
           </ul>
         </dd>
@@ -95,10 +98,10 @@
         <dd class="depth2">
           <ul class="depth2_list">
             <li>
-              <a href="html/flexbox.html" target="iframe">Flexbox</a>
+              <a href="html/flexbox.html" target="iframe"><i class="ico_24 ico_flex"></i>Flexbox</a>
             </li>
             <li>
-              <a href="javascript:void(0)" style="color: #999999 !important;">Layout templates</a>
+              <a href="javascript:void(0)" style="color: #999999 !important;"><i class="ico_24 ico_layouttemplate"></i>Layout templates</a>
             </li>
           </ul>
         </dd>
@@ -135,6 +138,9 @@
     $('.iframe').attr('src', reloadPage);
     $('[href="'+ reloadPage + '"]').parents('li').addClass('active');
 
+   $(".menubar_toggle").click(function(){
+      $(".framework_menu").toggleClass("collapsed");
+   })
   })
 </script>
 </body>

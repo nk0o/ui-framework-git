@@ -1,3 +1,22 @@
+//breakpoint
+@mixin mobile {
+   @media (max-width: #{$breakpoint-tablet}) {
+     @content;
+   }
+}
+ 
+@mixin tablet {
+   @media (max-width: #{$breakpoint-desktop}) {
+     @content;
+   }
+}
+ 
+@mixin desktop {
+   @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+   }
+}
+
 // font
 @mixin ko {
    font-family: $font-noto;
@@ -80,13 +99,6 @@
 		content: ' ';
 		display: block;
 	}
-}
-
-@mixin framework-desc {
-  font-size: $fs-s;
-  line-height: 2.6rem;
-  color: $gray-500;
-  letter-spacing: -0.56px;
 }
 
 @mixin inner-desc {
