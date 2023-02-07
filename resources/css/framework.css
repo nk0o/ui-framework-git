@@ -5739,34 +5739,22 @@ div.dataTables_wrapper .btn:focus {
 }
 
 .framework_menu {
-  overflow-y: auto;
   position: fixed;
   width: 266px;
   height: 100vh;
-  height: calc(100vh - 48px);
-  padding: 24px;
+  padding: 93px 0 48px 24px;
   background-color: #444B59;
   -webkit-transition: width 300ms;
   transition: width 300ms;
 }
-.framework_menu::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #ddd;
-}
-.framework_menu::-webkit-scrollbar {
-  width: 7px;
-  background-color: #ddd;
-}
-.framework_menu::-webkit-scrollbar-thumb {
-  width: 3px;
-  margin: 0 auto;
-  border-radius: 5px;
-  background-color: #999999;
-}
 .framework_menu h1 {
-  height: 44px;
-  margin-bottom: 24px;
-  padding-left: 56px;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #444B59;
+  height: 93px;
+  padding: 24px;
   line-height: 4.4rem;
   font-size: 2.2rem;
   font-weight: 500;
@@ -5774,6 +5762,25 @@ div.dataTables_wrapper .btn:focus {
 }
 .framework_menu .ico_framework_logo::before {
   display: none;
+}
+.framework_menu .framework_list {
+  overflow-y: scroll;
+  height: 100%;
+}
+.framework_menu .framework_list::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #ddd;
+}
+.framework_menu .framework_list::-webkit-scrollbar {
+  opacity: 0;
+  width: 7px;
+  background-color: #ddd;
+}
+.framework_menu .framework_list::-webkit-scrollbar-thumb {
+  width: 3px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #999999;
 }
 .framework_menu .framework_list *[class*=ico_] {
   display: none;
@@ -5843,17 +5850,33 @@ div.dataTables_wrapper .btn:focus {
 }
 .framework_menu.collapsed {
   width: auto;
-  padding: 16px;
+  text-align: center;
+  padding: 80px 0 48px;
 }
 .framework_menu.collapsed h1 {
   display: inline-block;
-  height: 29px;
-  padding-bottom: 54px;
+  height: auto;
+  line-height: 1;
+  padding: 16px 8px;
   margin-bottom: 0;
-  padding-left: 30px;
   font-size: 0;
-  background-size: 320px;
-  border-bottom: 1px solid #888;
+}
+.framework_menu.collapsed h1 i {
+  background-size: 520px;
+}
+.framework_menu.collapsed .framework_list::-webkit-scrollbar-track {
+  border-radius: 4px;
+  background-color: #ddd;
+}
+.framework_menu.collapsed .framework_list::-webkit-scrollbar {
+  width: 3px;
+  background-color: #ddd;
+}
+.framework_menu.collapsed .framework_list::-webkit-scrollbar-thumb {
+  width: 3px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #999999;
 }
 .framework_menu.collapsed .framework_list *[class*=ico_] {
   display: inline-block;
@@ -5871,6 +5894,7 @@ div.dataTables_wrapper .btn:focus {
 }
 .framework_menu.collapsed .framework_list .depth2 .depth2_list li {
   margin-top: 24px;
+  padding: 0 18px;
 }
 .framework_menu.collapsed .framework_list .depth2 .depth2_list li a {
   font-size: 0;
