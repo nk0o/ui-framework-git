@@ -16,6 +16,9 @@
             margin-left: 0;
          }
       }
+      & + .input_group{
+        margin-top: $sp03;
+      }
       button:not(.btn_icon) {
          padding-left: $sp05;
          padding-right: $sp05;
@@ -25,6 +28,10 @@
          align-items: flex-start;
          .txt_alert {
             margin-top: $sp02;
+         }
+         .input_text + .input_text{
+          margin-left: 0;
+          margin-top: 8px;
          }
       }
       &[class*="input_icon"] {
@@ -64,7 +71,7 @@
       }
    }
    //타입 텍스트
-   &_text[type="text"] {
+   &_text[type="text"], &_text[type="password"], &_text[type="email"] {
       width: 100%;
       height: 38px;
       padding: 0px $sp04;

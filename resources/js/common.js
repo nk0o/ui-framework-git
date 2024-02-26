@@ -7,7 +7,6 @@ $(document).ready(function () {
    if ($('.pagination').length > 0) { paginationUI() }
 
  
-      
    /****** Tab Menu ******/
    $('.tab_menu .tab_list').click(function () { tabMenu(this) });
 
@@ -276,6 +275,56 @@ $(document).ready(function () {
          });
       });
    }
+
+   /****** Modal ******/
+   let openModalBtn = $('.btn_modal_open');
+   let modalContainer = $('.modal_container');
+  
+   openModalBtn.click((e) => { e.preventDefault(); openModal(e.target) }); //open modal
+   modalContainer.on('click', '.btn_modal_close, .modal_overlay', (e)=>{ //close modal
+     e.preventDefault();
+     closeModal(e.target);
+   })   
+   let timer = null;
+   $(window).on('resize', function(){//resize modal
+    clearTimeout(timer);
+    timer = setTimeout(modalPosition, 50);
+   })
+
+  function openModal(el){
+    const modalName = $(el).attr('id');
+    let thisModal = $(".modal_container[data-modal='" + modalName + "']")
+    let documentH = $(document).height();
+  
+    thisModal.removeAttr("aria-hidden").addClass('open');
+    $("body").addClass("no_scroll");
+
+    modalPosition(thisModal)
+    $(el).find('.modal_overlay').css('height' , documentH)
+  }
+
+  function closeModal(el){
+    $(el).parents(".modal_container").attr("aria-hidden","true").removeClass('open');
+    $("body").removeClass("no_scroll");
+  }
+
+  function modalPosition(el){
+    let windowH = $(window).height();
+    let modal;
+    el == true ?  modal = $(el) :  modal = $(".modal_container.open");
+    const modalH = modal.find('.modal_content').height();
+    const overlay = modal.find('.modal_overlay');
+    const content = modal.find('.modal_content');
+    
+    if( modalH >= windowH - 100 ){
+      overlay.css('height', modalH + 100);
+      content.css({'position':'fixed','top':'50px'});
+      modal.scrollTop(0);
+    }else if( modalH < windowH ){
+      modal.find('.modal_overlay').css('height', windowH);
+      content.css({'position':'relative','top':'auto'});
+    }
+  }
 
 }) //ready
 

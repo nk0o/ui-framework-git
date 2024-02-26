@@ -1,57 +1,60 @@
+body.no_scroll{
+  overflow: hidden;
+}
 /** Font **/
 //Font Size
 h1 {
    font-size: $fs-xxxlg;
    font-weight: $fw-b;
-   line-height: 74px;
+   line-height: 1.37;
 }
 h2 {
    font-size: $fs-xlg;
    font-weight: $fw-sb;
-   line-height: 64px;
+   line-height: 1.52;
 }
 h3 {
    font-size: $fs-l;
    font-weight: $fw-m;
-   line-height: 48px;
+   line-height: 1.5;
 }
 h4 {
    font-size: $fs-md;
    font-weight: $fw-m;
-   line-height: 34px;
+   line-height: 1.41;
 }
 h5 {
    font-size: $fs-m;
    font-weight: $fw-m;
-   line-height: 32px;
+   line-height: 1.6;
 }
 h6 {
    font-size: $fs-sm;
    font-weight: $fw-m;
-   line-height: 26px;
+   line-height: 1.44;
 }
 caption {
    font-size: $fs-xxs;
-   line-height: 24px;
+   line-height: 2;
 }
 .txt {
    &_body1 {
       font-size: $fs-s;
       font-weight: $fw-m;
-      line-height: 26px;
+      line-height: 1.625;
    }
    &_body2 {
       font-size: $fs-xs;
       font-weight: $fw-n;
-      line-height: 24px;
+      line-height:1.71;
    }
    &_btn {
       font-size: $fs-xs;
-      line-height: 24px;
+      line-height:1.71;
    }
    &_caption {
       font-size: $fs-xxs;
-      line-height: 24px;
+      line-height: 2;
    }
 }
 /** Font Family **/
@@ -300,7 +303,7 @@ caption {
    position: relative;
    padding-left: 20px;
    font-size: $fs-xs;
-   line-height: 20px;
+   line-height: 1.42;
    &::before {
       content: "";
       display: block;
@@ -480,4 +483,14 @@ caption {
    &_center {
       text-align: center !important;
    }
+}
+
+//Text decoration
+.txt{
+  &_deco_under{
+    text-decoration: underline;
+  }
+  &_deco_through{
+    text-decoration: line-through;
+  }
 }

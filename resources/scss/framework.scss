@@ -1120,7 +1120,7 @@ footer {
             margin-top: 0 !important;
 				margin-left: $sp06;
 			}
-		}
+		}   
 		&+.snippet_btn {
 			margin-left: $sp06;
 		}
@@ -1135,6 +1135,10 @@ footer {
 				margin-left: 8px;
 			}
 		}
+    &.slider_snippet{
+      display: block;
+      width: calc(100% - 62px);
+    }
 		.select_box_value span,
 		.select_box_list .list_tit,
 		.select_box_list li span,
@@ -1144,6 +1148,9 @@ footer {
 		.avatar + .avatar{
 			margin-top: 30px !important;
 		}
+    .modal_container{
+      margin-top: 0 !important;
+    }
 	}
 	&_btn {
 		flex: 0 0 38px;
